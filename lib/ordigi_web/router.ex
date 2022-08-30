@@ -17,7 +17,7 @@ defmodule OrdigiWeb.Router do
   scope "/", OrdigiWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    resources "/pages", PageController
   end
 
   # Other scopes may use custom stacks.
