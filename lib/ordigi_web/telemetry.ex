@@ -1,4 +1,7 @@
 defmodule OrdigiWeb.Telemetry do
+  @moduledoc """
+    telemetry
+  """
   use Supervisor
   import Telemetry.Metrics
 

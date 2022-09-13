@@ -1,4 +1,8 @@
 defmodule Ordigi.Notes do
+  @moduledoc """
+    notes
+  """
+
   import Ecto.Query, warn: false
   alias Ordigi.Repo
 

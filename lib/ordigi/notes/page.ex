@@ -1,4 +1,8 @@
 defmodule Ordigi.Notes.Page do
+  @moduledoc """
+    page
+  """
+
   use Ecto.Schema
   import Ecto.Changeset
 
