@@ -42,8 +42,12 @@ jobs:
         restore-keys: ${{ runner.os }}-mix-
     - name: Install dependencies
       run: mix deps.get
-    - name: Check style with credo
+    - name: Check Code Format
+      run: mix format --check-formatted
+    - name: Run Credo
       run: mix credo
+    - name: Run Dialyzer
+      run: mix dialyzer --no-check --halt-exit-status
     - name: Run tests
       run: mix test
       env:
