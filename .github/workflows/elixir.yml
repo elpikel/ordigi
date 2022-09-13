@@ -28,12 +28,15 @@ jobs:
           --health-retries 5
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
+
     - name: Set up Elixir
       uses: erlef/setup-beam@988e02bfe678367a02564f65ca2e37726dc0268f
       with:
         elixir-version: '1.13.4'
         otp-version: '25.0.4'
+
     - name: Restore dependencies cache
       uses: actions/cache@v3
       with:
@@ -43,14 +46,19 @@ jobs:
           priv/plts
         key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
         restore-keys: ${{ runner.os }}-mix-
+
     - name: Install dependencies
       run: mix deps.get
-    - name: Check Code Format
+
+    - name: Check code format
       run: mix format --check-formatted
+
     - name: Run Credo
       run: mix credo
+
     - name: Run Dialyzer
       run: mix dialyzer
+
     - name: Run tests
       run: mix test
       env:
