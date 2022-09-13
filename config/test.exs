@@ -7,7 +7,7 @@ import Config
 # Run `mix help test` for more information.
 config :ordigi, Ordigi.Repo,
   username: "postgres",
-  password: System.get_env("DB_PASSWORD") || "localhost",
+  password: System.get_env("DB_PASSWORD") || "postgres",
   hostname: System.get_env("DB_HOST") || "localhost",
   database: "ordigi_test#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,
