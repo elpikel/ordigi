@@ -1,6 +1,6 @@
 defmodule Ordigi.Notes do
   @moduledoc """
-    notes
+    Notes.
   """
 
   import Ecto.Query, warn: false
