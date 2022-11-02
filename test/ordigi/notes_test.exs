@@ -3,6 +3,7 @@ defmodule Ordigi.NotesTest do
 
   alias Ordigi.Notes
 
+  # to be deleted
   describe "pages" do
     alias Ordigi.Notes.Page
 
